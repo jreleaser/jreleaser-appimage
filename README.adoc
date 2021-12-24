@@ -1,0 +1,16 @@
+= AppImage for JReleaser
+
+Follow these instructions to run JReleaser as an AppImage:
+
+* Download the latest AppImage from the release page
+```
+$ curl https://github.com/jreleaser/jreleaser-appimage/releases/download/v${version}/jreleaser-${version}-x86_64.AppImage --output jreleaser
+```
+* Make it executable
+```
+$ chmod +x jreleaser
+```
+* Run it
+```
+$ ./jreleaser --help
+```
