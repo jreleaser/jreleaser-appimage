@@ -1,16 +1,34 @@
 = AppImage for JReleaser
 
+:linkattrs:
+:project-owner:   jreleaser
+:project-name:    jreleaser-appimage
+:project-group:   org.jreleaser
+:project-version: 0.9.1
+
+image:https://img.shields.io/github/workflow/status/{project-owner}/{project-name}/Release?logo=github["Build Status", link="https://github.com/{project-owner}/{project-name}/actions"]
+image:https://img.shields.io/github/downloads/{project-owner}/{project-name}/total[GitHub Release Total]
+
+---
+
 Follow these instructions to run JReleaser as an AppImage:
 
 * Download the latest AppImage from the release page
-```
-$ curl https://github.com/jreleaser/jreleaser-appimage/releases/download/v${version}/jreleaser-${version}-x86_64.AppImage --output jreleaser
-```
+
+[source]
+[subs="attributes"]
+----
+$ curl https://github.com/jreleaser/jreleaser-appimage/releases/download/v{project-version}/jreleaser-{project-version}-x86_64.AppImage --output jreleaser
+----
+
 * Make it executable
+
 ```
 $ chmod +x jreleaser
 ```
+
 * Run it
+
 ```
 $ ./jreleaser --help
 ```
