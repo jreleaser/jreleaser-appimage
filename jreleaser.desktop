@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=JReleaser
+Exec=jreleaser
+Icon=jreleaser
+Categories=Development
+Version=1.0
+Type=Application
+Terminal=true

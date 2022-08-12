@@ -6,9 +6,11 @@
 shopt -s extglob
 
 SYSTEM_ARCH="x86_64"
-DISTRIBUTION_FILE="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-x86_64.zip"
-DISTRIBUTION_FILE_NAME="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-x86_64"
+DISTRIBUTION_FILE="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-${SYSTEM_ARCH}.zip"
+DISTRIBUTION_FILE_NAME="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-${SYSTEM_ARCH}"
+DISTRIBUTION_NAME="jreleaser"
 DISTRIBUTION_EXEC="jreleaser"
+DISTRIBUTION_ID="org.jreleaser.cli"
 DISTRIBUTION_URL="https://github.com/jreleaser/jreleaser/releases/download/v${DISTRIBUTION_VERSION}/${DISTRIBUTION_FILE}"
 APPIMAGETOOL_URL="https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-${SYSTEM_ARCH}.AppImage"
 
@@ -20,36 +22,26 @@ cd build/
 wget -c $APPIMAGETOOL_URL
 chmod +x "./appimagetool-${SYSTEM_ARCH}.AppImage"
 
-# download and extract Apache NetBeans release
+# download and extract release
 wget -c -O $DISTRIBUTION_FILE $DISTRIBUTION_URL
 unzip -o $DISTRIBUTION_FILE
 
 # create AppDir structure
 mkdir -p AppDir/
 mkdir -p AppDir/usr/share/
-mv "${DISTRIBUTION_FILE_NAME}/" AppDir/usr/share/${DISTRIBUTION_EXEC}
+mv "${DISTRIBUTION_FILE_NAME}" AppDir/usr/share/${DISTRIBUTION_NAME}
 mkdir -p AppDir/usr/bin/
-ln -s AppDir/usr/share/${DISTRIBUTION_FILE_NAME}/bin/${DISTRIBUTION_EXEC} AppDir/usr/bin/${DISTRIBUTION_EXEC}
+ln -s AppDir/usr/share/${DISTRIBUTION_NAME}/bin/${DISTRIBUTION_EXEC} AppDir/usr/bin/${DISTRIBUTION_EXEC}
 mkdir -p AppDir/usr/share/applications/
 mkdir -p AppDir/usr/share/icons/hicolor/128x128/
-cp ../icons/${DISTRIBUTION_EXEC}.png AppDir/usr/share/icons/hicolor/128x128/${DISTRIBUTION_EXEC}.png
+cp ../icons/${DISTRIBUTION_NAME}.png AppDir/usr/share/icons/hicolor/128x128/${DISTRIBUTION_NAME}.png
 mkdir -p AppDir/usr/share/metainfo
-cp ../org.jreleaser.cli.appdata.xml AppDir/usr/share/metainfo
-
-cat > AppDir/usr/share/applications/${DISTRIBUTION_EXEC}.desktop <<EOF
-[Desktop Entry]
-Name=JReleaser
-Exec=${DISTRIBUTION_EXEC}
-Icon=${DISTRIBUTION_EXEC}
-Categories=Development
-Version=1.0
-Type=Application
-Terminal=true
-EOF
-
-ln -s usr/share/applications/${DISTRIBUTION_EXEC}.desktop AppDir/${DISTRIBUTION_EXEC}.desktop
-ln -s usr/share/icons/hicolor/128x128/${DISTRIBUTION_EXEC}.png AppDir/${DISTRIBUTION_EXEC}.png
-ln -s usr/share/icons/hicolor/128x128/${DISTRIBUTION_EXEC}.png AppDir/.DirIcon
+cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo
+cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo/${DISTRIBUTION_NAME}.appdata.xml
+cp ../${DISTRIBUTION_NAME}.desktop AppDir/usr/share/applications
+ln -s usr/share/applications/${DISTRIBUTION_NAME}.desktop AppDir/${DISTRIBUTION_NAME}.desktop
+ln -s usr/share/icons/hicolor/128x128/${DISTRIBUTION_NAME}.png AppDir/${DISTRIBUTION_NAME}.png
+ln -s usr/share/icons/hicolor/128x128/${DISTRIBUTION_NAME}.png AppDir/.DirIcon
 
 # create AppRun script
 cat > AppDir/AppRun << "EOF"
@@ -63,4 +55,4 @@ EOF
 chmod +x AppDir/AppRun
 
 # build AppImage
-ARCH=${SYSTEM_ARCH} "./appimagetool-${SYSTEM_ARCH}.AppImage" -v AppDir/ "../jreleaser-${DISTRIBUTION_VERSION}-${SYSTEM_ARCH}.AppImage"
+ARCH=${SYSTEM_ARCH} "./appimagetool-${SYSTEM_ARCH}.AppImage" -v AppDir/ "../${DISTRIBUTION_NAME}-${DISTRIBUTION_VERSION}-${SYSTEM_ARCH}.AppImage"
