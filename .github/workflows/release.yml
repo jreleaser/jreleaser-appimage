@@ -18,11 +18,13 @@ jobs:
         id: vars
         run: |
           echo ::set-output name=version::$(cat VERSION)
+          echo ::set-output name=tag::${GITHUB_REF#refs/tags/}
 
       - name: Create the AppImage
         run: sh create-appimage.sh
         env:
           DISTRIBUTION_VERSION: ${{ steps.vars.outputs.version }}
+          DISTRIBUTION_TAG: ${{ steps.vars.outputs.tag }}
 
       - name: Release
         uses: jreleaser/release-action@v2
@@ -42,7 +44,7 @@ jobs:
 
       - name: JReleaser output
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jreleaser-logs
           path: |

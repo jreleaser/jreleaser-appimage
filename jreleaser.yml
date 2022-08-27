@@ -1,12 +1,12 @@
 project:
   name: jreleaser
   description: Release projects quickly and easily with JReleaser
-  website: https://jreleaser.org
+  links:
+    homepage: https://jreleaser.org
   authors:
     - Andres Almiray
   license: Apache-2.0
-  extraProperties:
-    inceptionYear: 2020
+  inceptionYear: 2020
 
 release:
   github:
@@ -30,7 +30,7 @@ signing:
 announce:
   twitter:
     active: release
-    status: 🚀 jreleaser-{{projectVersion}}-x86_64.AppImage has been released! {{releaseNotesUrl}}
+    status: '🚀 jreleaser-{{projectVersion}}-x86_64.AppImage has been released! {{releaseNotesUrl}}'
 
 files:
   artifacts:
