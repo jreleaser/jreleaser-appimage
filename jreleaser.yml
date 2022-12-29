@@ -16,7 +16,6 @@ release:
     changelog:
       formatted: ALWAYS
       preset: conventional-commits
-      format: '- {{commitShortHash}} {{commitTitle}}'
       contributors:
         format: '- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}'
       hide:
@@ -24,12 +23,16 @@ release:
           - 'GitHub'
 
 signing:
-  active: always
+  active: ALWAYS
   armored: true
 
 announce:
   twitter:
-    active: release
+    active: RELEASE
+    status: '🚀 jreleaser-{{projectVersion}}-x86_64.AppImage has been released! {{releaseNotesUrl}}'
+  mastodon:
+    active: RELEASE
+    host: https://fosstodon.org
     status: '🚀 jreleaser-{{projectVersion}}-x86_64.AppImage has been released! {{releaseNotesUrl}}'
 
 files:
