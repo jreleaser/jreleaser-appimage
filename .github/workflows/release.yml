@@ -23,7 +23,7 @@ jobs:
       - name: Install libfuse
         run: |
           sudo apt-get update -y
-          sudo apt-get install fuse 
+          sudo apt-get install fuse
 
       - name: Create the AppImage
         run: sh create-appimage.sh
