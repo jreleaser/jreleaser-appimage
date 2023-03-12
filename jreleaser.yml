@@ -7,7 +7,6 @@ project:
     - Andres Almiray
   license: Apache-2.0
   inceptionYear: 2020
-  stereotype: CLI
 
 release:
   github:
@@ -25,16 +24,12 @@ release:
           - 'GitHub'
 
 signing:
-  active: ALWAYS
+  active: always
   armored: true
 
 announce:
   twitter:
-    active: RELEASE
-    status: '🚀 jreleaser-{{projectVersion}}-x86_64.AppImage has been released! {{releaseNotesUrl}}'
-  mastodon:
-    active: RELEASE
-    host: https://fosstodon.org
+    active: release
     status: '🚀 jreleaser-{{projectVersion}}-x86_64.AppImage has been released! {{releaseNotesUrl}}'
 
 files:
