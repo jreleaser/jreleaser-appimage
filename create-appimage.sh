@@ -5,7 +5,7 @@
 
 SYSTEM_ARCH="x86_64"
 DISTRIBUTION_FILE="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-x86_64.zip"
-DISTRIBUTION_FILE_NAME="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-x86_64"
+DISTRIBUTION_FILE_NAME=""
 DISTRIBUTION_NAME="jreleaser"
 DISTRIBUTION_EXEC="jreleaser"
 DISTRIBUTION_ID="org.jreleaser.cli"
