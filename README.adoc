@@ -4,8 +4,8 @@
 :executable:      jreleaser
 :project-owner:   jreleaser
 :project-name:    jreleaser-appimage
-:project-version: 1.8.0
-:project-tag:     v1.8.0
+:project-version: 1.9.0
+:project-tag:     v1.9.0
 
 image:https://img.shields.io/github/actions/workflow/status/{project-owner}/{project-name}/release.yml?branch=main&logo=github&label=Build["Build Status", link="https://github.com/{project-owner}/{project-name}/actions"]
 image:https://img.shields.io/github/downloads/{project-owner}/{project-name}/total[GitHub Release Total]
