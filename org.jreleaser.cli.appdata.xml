@@ -23,6 +23,9 @@ may be announced in a variety of channels such as Twitter, Zulip, SDKMAN!, and m
     <binary>jreleaser</binary>
   </provides>
   <releases>
+    <release version="1.17.0" date="2025-02-28">
+      <url>https://github.com/jreleaser/jreleaser/releases/tag/v1.17.0</url>
+    </release>
     <release version="1.16.0" date="2024-12-31">
       <url>https://github.com/jreleaser/jreleaser/releases/tag/v1.16.0</url>
     </release>
@@ -131,7 +134,7 @@ may be announced in a variety of channels such as Twitter, Zulip, SDKMAN!, and m
     <release version="0.1.0" date="2021-04-10">
       <url>https://github.com/jreleaser/jreleaser/releases/tag/v0.1.0</url>
     </release>
-    <release version="0.0.0" date="2024-12-31">
+    <release version="0.0.0" date="2025-02-25">
       <url>https://github.com/jreleaser/jreleaser/releases/tag/early-access</url>
     </release>
   </releases>
