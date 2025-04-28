@@ -5,7 +5,7 @@
 
 SYSTEM_ARCH="x86_64"
 DISTRIBUTION_FILE="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-x86_64.zip"
-DISTRIBUTION_FILE_NAME=""
+DISTRIBUTION_FILE_NAME="jreleaser-standalone-${DISTRIBUTION_VERSION}-linux-x86_64"
 DISTRIBUTION_NAME="jreleaser"
 DISTRIBUTION_EXEC="jreleaser"
 DISTRIBUTION_ID="org.jreleaser.cli"
@@ -52,7 +52,7 @@ ln -s AppDir/usr/share/${DISTRIBUTION_NAME}/bin/${DISTRIBUTION_EXEC} AppDir/usr/
 mkdir -p AppDir/usr/share/applications/
 mkdir -p AppDir/usr/share/metainfo
 cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo
-cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo/${DISTRIBUTION_NAME}.appdata.xml
+#cp ../${DISTRIBUTION_ID}.appdata.xml AppDir/usr/share/metainfo/${DISTRIBUTION_NAME}.appdata.xml
 cp ../${DISTRIBUTION_NAME}.desktop AppDir/usr/share/applications
 ln -s usr/share/applications/${DISTRIBUTION_NAME}.desktop AppDir/${DISTRIBUTION_NAME}.desktop
 mkdir -p AppDir/usr/share/icons/hicolor/256x256/

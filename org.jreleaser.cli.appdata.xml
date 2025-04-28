@@ -138,7 +138,10 @@ may be announced in a variety of channels such as Twitter, Zulip, SDKMAN!, and m
       <url>https://github.com/jreleaser/jreleaser/releases/tag/early-access</url>
     </release>
   </releases>
-  <developer_name>JReleaser</developer_name>
+  <developer>
+    <id>jreleaser</id>
+    <name>JReleaser</name>
+  </developer>
   <screenshots>
      <screenshot type="default">
        <caption>JReleaser in action</caption>
@@ -147,8 +150,7 @@ may be announced in a variety of channels such as Twitter, Zulip, SDKMAN!, and m
   </screenshots>
   <content_rating type="oars-1.1" />
   <url type="homepage">https://jreleaser.org</url>
-  <url type="documentation">https://jreleaser.org/guide/latest</url>
-  <url type="license">https://spdx.org/licenses/Apache-2.0.html</url>
+  <url type="help">https://jreleaser.org/guide/latest</url>
   <url type="bugtracker">https://github.com/jreleaser/jreleaser/issues</url>
   <url type="vcs-browser">https://github.com/jreleaser/jreleaser</url>
   <url type="faq">https://github.com/jreleaser/jreleaser/discussions</url>
